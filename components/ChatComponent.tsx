@@ -133,7 +133,11 @@ export function ChatComponent() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#1e5c4a] text-white shadow-lg transition hover:bg-[#174a3c] focus:outline-none focus:ring-2 focus:ring-[#1e5c4a]/40"
+        className="fixed z-50 flex h-14 min-h-[3.5rem] w-14 min-w-[3.5rem] touch-manipulation items-center justify-center rounded-full bg-[#1e5c4a] text-white shadow-lg transition hover:bg-[#174a3c] focus:outline-none focus:ring-2 focus:ring-[#1e5c4a]/40"
+        style={{
+          bottom: "max(1rem, env(safe-area-inset-bottom, 0px))",
+          right: "max(1rem, env(safe-area-inset-right, 0px))",
+        }}
         aria-label="Buka chat dengan Budi (AI helper)"
       >
         <MessageCircle className="h-7 w-7" strokeWidth={1.75} />
@@ -141,14 +145,19 @@ export function ChatComponent() {
 
       {open ? (
         <div
-          className="fixed inset-0 z-50 flex items-end justify-end bg-black/30 p-4 sm:items-end sm:p-6"
+          className="fixed inset-0 z-50 flex flex-col justify-end bg-black/40 p-0 sm:items-end sm:justify-end sm:bg-black/30 sm:p-4 md:p-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby="chat-title"
           aria-describedby="chat-subtitle"
         >
-          <div className="flex h-[min(580px,88vh)] w-full max-w-md flex-col overflow-hidden rounded-2xl border border-stone-200/80 bg-[#f0ebe4] shadow-2xl">
-            <header className="flex items-center gap-3 border-b border-stone-200/90 bg-[#1e5c4a] px-3 py-3 text-white sm:px-4">
+          <div
+            className="flex max-h-[100dvh] min-h-0 w-full max-w-full flex-1 flex-col overflow-hidden rounded-none border-0 border-stone-200/80 bg-[#f0ebe4] shadow-2xl sm:max-h-[min(580px,90dvh)] sm:max-w-md sm:flex-none sm:rounded-2xl sm:border"
+            style={{
+              paddingBottom: "env(safe-area-inset-bottom, 0px)",
+            }}
+          >
+            <header className="flex shrink-0 items-center gap-3 border-b border-stone-200/90 bg-[#1e5c4a] px-3 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] text-white sm:px-4">
               <div
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 text-base font-semibold ring-2 ring-white/25"
                 aria-hidden
@@ -175,7 +184,7 @@ export function ChatComponent() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="shrink-0 rounded-lg p-1.5 hover:bg-white/10"
+                className="min-h-[44px] min-w-[44px] shrink-0 touch-manipulation rounded-lg p-2 hover:bg-white/10"
                 aria-label="Tutup chat"
               >
                 <X className="h-5 w-5" />
@@ -184,12 +193,12 @@ export function ChatComponent() {
 
             <div
               ref={listRef}
-              className="flex-1 space-y-3 overflow-y-auto px-3 py-4 text-sm text-stone-800"
+              className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overscroll-contain px-3 py-3 text-sm text-stone-800 sm:py-4"
               aria-live="polite"
               aria-relevant="additions text"
             >
               {messages.length === 0 ? (
-                <div className="space-y-3">
+                <div className="flex flex-col gap-3">
                   <div className="mr-4 rounded-2xl rounded-bl-md border border-stone-200 bg-white px-3 py-2.5 shadow-sm">
                     <p className="whitespace-pre-wrap leading-relaxed text-stone-800">
                       Halo—saya Budi, pembantu chat untuk info properti di sini. Mau tanya lokasi,
@@ -203,7 +212,7 @@ export function ChatComponent() {
                         type="button"
                         onClick={() => void sendMessage(q)}
                         disabled={isLoading}
-                        className="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-left text-xs text-stone-700 shadow-sm transition hover:border-[#1e5c4a]/40 hover:bg-stone-50 disabled:opacity-50"
+                        className="touch-manipulation rounded-full border border-stone-200 bg-white px-3 py-2.5 text-left text-xs leading-snug text-stone-700 shadow-sm transition hover:border-[#1e5c4a]/40 hover:bg-stone-50 active:bg-stone-100 disabled:opacity-50 sm:py-1.5"
                       >
                         {q}
                       </button>
@@ -217,11 +226,11 @@ export function ChatComponent() {
                   key={`${i}-${m.role}`}
                   className={
                     m.role === "user"
-                      ? "ml-8 rounded-2xl rounded-br-md bg-[#1e5c4a] px-3 py-2 text-white"
-                      : "mr-4 rounded-2xl rounded-bl-md border border-stone-200 bg-white px-3 py-2 text-stone-800 shadow-sm"
+                      ? "max-w-[min(100%,22rem)] self-end rounded-2xl rounded-br-md bg-[#1e5c4a] px-3 py-2.5 text-[15px] text-white sm:max-w-[min(100%,24rem)] sm:text-sm"
+                      : "max-w-[min(100%,24rem)] self-start rounded-2xl rounded-bl-md border border-stone-200 bg-white px-3 py-2.5 text-[15px] text-stone-800 shadow-sm sm:max-w-[min(100%,26rem)] sm:text-sm"
                   }
                 >
-                  <p className="whitespace-pre-wrap leading-relaxed">{m.content}</p>
+                  <p className="break-words whitespace-pre-wrap leading-relaxed">{m.content}</p>
                 </div>
               ))}
 
@@ -259,7 +268,7 @@ export function ChatComponent() {
               </div>
             ) : null}
 
-            <div className="border-t border-stone-200 bg-white p-3">
+            <div className="shrink-0 border-t border-stone-200 bg-white p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
               <div className="flex gap-2">
                 <textarea
                   ref={inputRef}
@@ -273,14 +282,17 @@ export function ChatComponent() {
                   }}
                   placeholder="Tulis pertanyaan Anda… (Shift+Enter baris baru)"
                   rows={2}
-                  className="min-h-[44px] flex-1 resize-none rounded-xl border border-stone-200 bg-stone-50 px-3 py-2 text-sm text-stone-900 placeholder:text-stone-400 focus:border-[#1e5c4a] focus:outline-none focus:ring-1 focus:ring-[#1e5c4a]/30"
+                  enterKeyHint="send"
+                  inputMode="text"
+                  autoComplete="off"
+                  className="min-h-[48px] flex-1 resize-none rounded-xl border border-stone-200 bg-stone-50 px-3 py-3 text-base text-stone-900 placeholder:text-stone-400 focus:border-[#1e5c4a] focus:outline-none focus:ring-1 focus:ring-[#1e5c4a]/30 sm:min-h-[44px] sm:py-2 sm:text-sm"
                   disabled={isLoading}
                 />
                 <button
                   type="button"
                   onClick={() => void sendMessage()}
                   disabled={isLoading || !input.trim()}
-                  className="flex h-11 w-11 shrink-0 items-center justify-center self-end rounded-xl bg-[#1e5c4a] text-white shadow-sm transition hover:bg-[#174a3c] disabled:opacity-40"
+                  className="flex h-12 min-h-[48px] w-12 min-w-[48px] shrink-0 touch-manipulation items-center justify-center self-end rounded-xl bg-[#1e5c4a] text-white shadow-sm transition hover:bg-[#174a3c] active:bg-[#174a3c] disabled:opacity-40 sm:h-11 sm:min-h-[44px] sm:w-11 sm:min-w-[44px]"
                   aria-label="Kirim"
                 >
                   <Send className="h-5 w-5" />
