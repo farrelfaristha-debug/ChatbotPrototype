@@ -1,0 +1,81 @@
+{
+  "documentTitle": "Knowledge Base Cihanjuang Hills",
+  "projectName": "Cluster Cihanjuang Hills",
+  "assistantName": "Budi",
+  "personaInChat": "Budi adalah nama staf yang membalas chat calon pembeli (gaya layanan pelanggan), bukan nama produk otomatis.",
+  "positioning": "Perumahan di kawasan Cihanjuang, Cimahi, dengan konsep hunian nyaman dan lingkungan yang mendukung gaya hidup keluarga modern.",
+  "inventory": {
+    "totalUnits": 45,
+    "note": "Jumlah unit terbatas (45 unit). Sesekali tekankan ketersediaan terbatas tanpa mengada-adaikan diskon atau promo yang tidak ada di data ini."
+  },
+  "unitTypes": [
+    {
+      "code": "Tipe 45/72",
+      "landBuildingM2": "45/72",
+      "layoutSummary": "Rumah 1 lantai dengan layout efisien untuk keluarga kecil atau pasangan.",
+      "highlights": ["Ruang tamu terintegrasi dengan area makan", "Taman depan compact"]
+    },
+    {
+      "code": "Tipe 80/100",
+      "landBuildingM2": "80/100",
+      "layoutSummary": "Lebih lapang dengan ruang keluarga lebih besar, cocok untuk kebutuhan jangka panjang.",
+      "highlights": ["Ruang keluarga lebih luas", "Potensi ruang tambahan sesuai kebutuhan (detail ke marketing)"]
+    }
+  ],
+  "specifications": {
+    "materialsAndFinishing": [
+      "Lantai utama: granit / keramik ukuran besar pada area publik (detail per tipe—konfirmasi ke marketing)",
+      "Dinding: kombinasi bata merah finishing plester/cat sesuai standar developer",
+      "Sanitair: merek TOTO atau setara pada kamar mandi utama",
+      "Atap: rangka baja ringan / kayu dengan penutup genteng berkualitas",
+      "Pintu dan jendela: aluminium / kayu engineered sesuai spesifikasi unit"
+    ],
+    "includedNote": "Kelengkapan fixture (kitchen set, lampu, dll.) mengikuti paket penjualan per tipe—pastikan dengan brosur resmi atau konsultan."
+  },
+  "location": {
+    "area": "Cihanjuang, Kota Cimahi, Jawa Barat",
+    "oneLineForChat": "Cluster Cihanjuang Hills berada di kawasan Cihanjuang, Kota Cimahi, Jawa Barat. Untuk pin point dan akses jalan terbaru, tim marketing bisa kirim lokasi maps.",
+    "sellingPoints": [
+      "Udara cenderung sejuk karena ketinggian dan vegetasi sekitar",
+      "Akses strategis dekat dengan aktivitas pemerintahan (Pemkot Cimahi) dan fasilitas kota",
+      "Kawasan perumahan dengan perencanaan drainase sehingga relatif minim risiko banjir (bebas banjir pada kondisi normal—detail teknis dari tim marketing)"
+    ]
+  },
+  "priceList": {
+    "currency": "IDR",
+    "rangeLabel": "Kisaran investasi mengikuti tipe (45/72 vs 80/100), posisi kavling, dan promo berjalan—detail pasti dari konsultan.",
+    "disclaimer": "Harga final, insentif, dan ketersediaan unit mengikuti kebijakan developer. Jangan menyebut angka pasti atau diskon kecuali tercantum di dokumen resmi terbaru."
+  },
+  "kpr": {
+    "interestRateFromPercent": 3.5,
+    "partnerBanks": ["BCA", "Mandiri", "BNI"],
+    "note": "Simulasi cicilan adalah estimasi; suku bunga efektif, biaya provisi, dan persetujuan mengikuti kebijakan bank. Untuk angka pasti, konsultasikan dengan bank mitra."
+  },
+  "leadAssets": {
+    "pricelistLengkap": "Tersedia melalui tim marketing setelah data kontak dikumpulkan.",
+    "brosurPdf": "Dapat dikirim via WhatsApp oleh tim setelah nama dan nomor terverifikasi.",
+    "surveiLokasi": "Janji kunjungan / survei lokasi dijadwalkan melalui tim marketing."
+  },
+  "faqSnippets": [
+    {
+      "topic": "beda tipe 45/72 vs 80/100",
+      "jawabanSingkat": "45/72 lebih compact untuk keluarga kecil; 80/100 lebih lapang dengan ruang keluarga lebih besar. Detail layout ada di unitTypes."
+    },
+    {
+      "topic": "merek WC / sanitair",
+      "jawabanSingkat": "Sanitair mengacu TOTO atau setara pada kamar mandi utama (lihat specifications.materialsAndFinishing)."
+    },
+    {
+      "topic": "lantai",
+      "jawabanSingkat": "Lantai utama memakai granit atau keramik ukuran besar di area publik—detail per tipe."
+    },
+    {
+      "topic": "alamat / lokasi",
+      "jawabanSingkat": "Gunakan location.oneLineForChat lalu 1-2 sellingPoints. Jangan hanya menawarkan bantuan tanpa menyebut kota/area."
+    },
+    {
+      "topic": "harga",
+      "jawabanSingkat": "Gunakan priceList.rangeLabel + disclaimer—tidak ada angka net di KB ini; arahkan ke konsultan untuk penawaran pasti."
+    }
+  ]
+}
